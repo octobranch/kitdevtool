@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asistente de Documentación</title>
+    <link rel="stylesheet" href="asis.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Asistente de Documentación</h1>
+            <nav>
+                <button id="readme-generator-btn">Generador README</button>
+                <button id="tech-docs-btn">Documentación Técnica</button>
+                <button id="docs-validator-btn">Validador Docs</button>
+                <button id="changelog-generator-btn">Generador Changelog</button>
+            </nav>
+        </header>
+
+        <main>
+            <section id="readme-generator" class="tool-section">
+                <h2>Generador Automático de README</h2>
+                <form id="readme-form">
+                    <label for="project-name">Nombre del Proyecto:</label>
+                    <input type="text" id="project-name" required>
+
+                    <label for="project-description">Descripción:</label>
+                    <textarea id="project-description" required></textarea>
+
+                    <label for="installation-steps">Pasos de Instalación:</label>
+                    <textarea id="installation-steps"></textarea>
+
+                    <label for="usage-examples">Ejemplos de Uso:</label>
+                    <textarea id="usage-examples"></textarea>
+
+                    <button type="submit">Generar README</button>
+                </form>
+                <pre id="readme-output"></pre>
+            </section>
+
+            <section id="tech-docs" class="tool-section">
+                <h2>Creador de Documentación Técnica</h2>
+                <form id="tech-docs-form">
+                    <label for="component-name">Nombre del Componente:</label>
+                    <input type="text" id="component-name" required>
+
+                    <label for="tech-description">Descripción Técnica:</label>
+                    <textarea id="tech-description" required></textarea>
+
+                    <label for="parameters">Parámetros:</label>
+                    <div id="parameters-container">
+                        <div class="parameter-row">
+                            <input type="text" class="param-name" placeholder="Nombre">
+                            <input type="text" class="param-type" placeholder="Tipo">
+                            <input type="text" class="param-description" placeholder="Descripción">
+                            <button type="button" class="remove-param">-</button>
+                        </div>
+                    </div>
+                    <button type="button" id="add-parameter">+ Agregar Parámetro</button>
+
+                    <button type="submit">Generar Documentación</button>
+                </form>
+                <pre id="tech-docs-output"></pre>
+            </section>
+
+            <section id="docs-validator" class="tool-section">
+                <h2>Validador de Documentación</h2>
+                <form id="validator-form">
+                    <label for="documentation-input">Texto de Documentación:</label>
+                    <textarea id="documentation-input" required></textarea>
+
+                    <div class="validation-options">
+                        <label>
+                            <input type="checkbox" id="check-grammar"> Revisar Gramática
+                        </label>
+                        <label>
+                            <input type="checkbox" id="check-clarity"> Revisar Claridad
+                        </label>
+                        <label>
+                            <input type="checkbox" id="check-completeness"> Revisar Completitud
+                        </label>
+                    </div>
+
+                    <button type="submit">Validar Documentación</button>
+                </form>
+                <div id="validation-results"></div>
+            </section>
+
+            <section id="changelog-generator" class="tool-section">
+                <h2>Generador de Changelog</h2>
+                <form id="changelog-form">
+                    <label for="version">Versión:</label>
+                    <input type="text" id="version" required placeholder="v1.0.0">
+
+                    <label for="added-features">Características Agregadas:</label>
+                    <textarea id="added-features"></textarea>
+
+                    <label for="fixed-issues">Problemas Corregidos:</label>
+                    <textarea id="fixed-issues"></textarea>
+
+                    <label for="changes">Cambios:</label>
+                    <textarea id="changes"></textarea>
+
+                    <button type="submit">Generar Changelog</button>
+                </form>
+                <pre id="changelog-output"></pre>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2024 Asistente de Documentación</p>
+        </footer>
+    </div>
+
+    <script src="asis.js"></script>
+</body>
+</html>
